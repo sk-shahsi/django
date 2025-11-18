@@ -864,3 +864,19 @@ Traceback (most recent call last):
   File "D:\django\Desigen\Desigen\urls.py", line 20, in <module>
     from Desigen.views import *
 ModuleNotFoundError: No module named 'Desigen.views'
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+this is frsh and explaned command od django
+
+1. django-admin startproject myproject
+myproject is project name
+
+2. python manage.py runserver
+to start development server
+
+3. python manage.py startapp app1
+To create app inside packeg another folder app1 inside should be
+avlable migration folder
+bdjango
+
+D:\django\mywebsit>python manage.py runserver
