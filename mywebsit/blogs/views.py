@@ -6,10 +6,10 @@ from django.template.loader import render_to_string
 # Create your views here.
 
 blog_name = {
-    "python-basic": "<h1>Python post<h1>",
-    "django-basic": "Django post",
-    "python-oops": "<h1>Python oops post<h1>",
-    "regex": "<h1>Regular expiration in python<h1>"
+    "python-basic": "Python Basic Intro",
+    "django-basic": "Django basic post",
+    "python-oops": "Python oops post",
+    "regex": "Regular expiration in python"
 
 }
 def home_page(request):
@@ -41,11 +41,17 @@ def django_basic_intro(request):
 
 def python_oops(request):
     return HttpResponse("<h1>Python Oops Introduction !!<h1>")
+def process_blog_name(blog):
+    blog_list = blog.split("-")
+    return " ".join(blog_list).title()
 
 def blog_post(request,blog):
     try:
 
         res = blog_name[blog]
+        return render(request, "blogs/post.html",{"blog_text":res
+                                                  ,"blog_name":process_blog_name(blog)})
+
         # if blog == "python-basic":
         #     res = "<h1>Python post<h1>"
         # elif blog == "django-basic":
@@ -54,11 +60,9 @@ def blog_post(request,blog):
         #     res = "<h1>Python post<h1>"
         # else:
     except Exception :
-
-
         return HttpResponseNotFound("<h1>Blog not found<h1>")
-    else :
-        return HttpResponse(res)
+    # else :
+    #     return HttpResponse(res)
 
 # def blog_post_by_number(request,blog):
 #    return HttpResponse(blog)
