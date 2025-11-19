@@ -12,10 +12,16 @@ blog_name = {
     "regex": "Regular expiration in python"
 
 }
+# def home_page(request):
+#     return render(request, "blogs/index.html")
+#     res_data = render_to_string("blogs/index.html")
+#     # return HttpResponse(res_data)
+
 def home_page(request):
     return render(request, "blogs/index.html")
     res_data = render_to_string("blogs/index.html")
     # return HttpResponse(res_data)
+
 def blogpost(request):
     list_items =""
     blog_list = list(blog_name.keys())

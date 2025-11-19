@@ -9,8 +9,8 @@
 <body>
 
 <ul>
-{% for blog in blogs %}
-    <li><a href="">{{ blog|capfirst }}</a></li>
+{% for blog in blog_list %}
+    <li><a href="{% url 'blog_post' blog=blog %}">{{ blog|capfirst }}</a></li>
     {% endfor %}
 </ul>
 </body>
