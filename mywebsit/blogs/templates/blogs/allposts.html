@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{blog_name|title}}</title>
+    <title>All Post</title>
 
 </head>
 <body>
 
-<h1>{{blog_name|title}} blog post</h1>
-<h2>{{ blog_text }}</h2>
+<ul>
+{% for blog in blogs %}
+    <li><a href="">{{ blog|capfirst }}</a></li>
+    {% endfor %}
+</ul>
 </body>
 </html>

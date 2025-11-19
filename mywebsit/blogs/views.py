@@ -19,9 +19,10 @@ def home_page(request):
 def blogpost(request):
     list_items =""
     blog_list = list(blog_name.keys())
-    for b in blog_list:
-        blog_path = reverse("blog_post", args=[b])
-        list_items += f'<li><a href="{blog_path}">{b.capitalize()}</li>'
+    return render(request, "blogs/allposts.html",{"blog_list":blog_list})
+    # for b in blog_list:
+    #     blog_path = reverse("blog_post", args=[b])
+    #     list_items += f'<li><a href="{blog_path}">{b.capitalize()}</li>'
 
     # res_data = """
     # <ul>
@@ -30,8 +31,8 @@ def blogpost(request):
     #
     # </ul>
     # """
-    res_data = f"<ul>{list_items}</ul>"
-    return HttpResponse(res_data)
+    # res_data = f"<ul>{list_items}</ul>"
+    # return HttpResponse(res_data)
 
 def python_intro(request):
     return HttpResponse("<h1>Python Introduction !!<h1>")
@@ -43,7 +44,8 @@ def python_oops(request):
     return HttpResponse("<h1>Python Oops Introduction !!<h1>")
 def process_blog_name(blog):
     blog_list = blog.split("-")
-    return " ".join(blog_list).title()
+    return " ".join(blog_list)
+    #return " ".join(blog_list).title()
 
 def blog_post(request,blog):
     try:
