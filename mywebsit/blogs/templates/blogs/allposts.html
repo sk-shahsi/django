@@ -1,7 +1,14 @@
 {% extends "base.html"%}
+
+{% load static %}
+{% block css_files %}{% endblock %}
+<link rel="stylesheet" href="{% static 'blogs/app.css' %}">
+
 {% block page_title %}
 All Post
 {% endblock %}
+
+
 
 {% block body_content %}
 {% include "blogs/includes/header.html" with active_page="Post" %}
