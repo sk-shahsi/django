@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.urls import path
 from . import views
 urlpatterns = [
-    path("",views.home_page),
+    path("",views.home_page,name="home"),
 
     path('allposts',views.blogpost),
     # path("allposts/python_intro",views.python_intro),

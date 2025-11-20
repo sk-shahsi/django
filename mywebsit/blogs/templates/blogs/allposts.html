@@ -4,7 +4,7 @@ All Post
 {% endblock %}
 
 {% block body_content %}
-{% include "blogs/includes/header.html" %}
+{% include "blogs/includes/header.html" with active_page="Post" %}
 <ul>
 {% for blog in blog_list %}
     <li><a href="{% url 'blog_post' blog=blog %}">{{ blog|capfirst }}</a></li>

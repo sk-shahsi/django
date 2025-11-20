@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound,Http404
 from django.urls import reverse
+from django.template.loader import render_to_string
 from django.template.loader import render_to_string
 
 # Create your views here.
@@ -79,9 +80,13 @@ def blog_post(request,blog):
         #     res = "<h1>Python post<h1>"
         # else:
     except Exception :
-        return HttpResponseNotFound("<h1>Blog not found<h1>")
+        # 2 raise Http404() #to production level
+         res_data= render_to_string("404.html")
+         return HttpResponseNotFound(res_data)
     # else :
     #     return HttpResponse(res)
 
 # def blog_post_by_number(request,blog):
 #    return HttpResponse(blog)
+
+
