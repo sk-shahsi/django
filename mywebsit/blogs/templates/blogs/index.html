@@ -1,11 +1,62 @@
 {% extends "base.html" %}
+{% load static %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blogs/app.css' %}">
+{% endblock %}
+
+
 {% block page_title %}
     Our blog post home page
 {% endblock %}
 
 {% block body_content %}
+<!--{% include "blogs/includes/header.html" %}-->
+<section>
+    <header>
+        <h1>Welcome to My Personal Blog Post</h1>
+        <h2>I wrote about Python and related stuff</h2>
+        <img src="{% static 'blogs/images/author.jpg'%}" alt="Author"/>
+    </header>
+</section>
+<section>
 
-      <h1>Welcome to My Personal Blog Post</h1>
-      <h2>I wrote about Python and related stuff</h2>
+    <h2>Feature Post</h2>
+    <ul>
+        <li>
+            <article>
+                <a href=""><img src="{% static 'blogs/images/py.jpeg'%}" alt="Python" />
+                    <div>
+
+                        <h3>Python Intro</h3>
+                        <p>python is high leval programing language.</p>
+                    </div>
+
+                </a>
+
+            </article>
+        </li>
+        <li>
+            <article>
+                <a href=""><img src="{% static 'blogs/images/dj.png'%}" alt="Django" />
+                    <div>
+
+                        <h3>Django Intro</h3>
+                        <p>Django is a web framework in Python.</p>
+                    </div>
+
+                </a>
+
+            </article>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>About the Auther</h2>
+    <p>The Auther has 5+ years of Experience in software and application development
+    He also makes content on Python & Django</p>
+    <p>Contacy the auther on contect@example.com</p>
+</section>
 
 {% endblock %}
+

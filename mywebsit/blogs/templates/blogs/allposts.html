@@ -1,9 +1,9 @@
 {% extends "base.html"%}
 
 {% load static %}
-{% block css_files %}{% endblock %}
+{% block css_files %}
 <link rel="stylesheet" href="{% static 'blogs/app.css' %}">
-
+{% endblock %}
 {% block page_title %}
 All Post
 {% endblock %}
@@ -11,13 +11,23 @@ All Post
 
 
 {% block body_content %}
-{% include "blogs/includes/header.html" with active_page="Post" %}
+<!--{% include "blogs/includes/header.html" with active_page="Post" %}-->
+<section>
+    <h2>All My Posts </h2>
 <ul>
 {% for blog in blog_list %}
-    <li><a href="{% url 'blog_post' blog=blog %}">{{ blog|capfirst }}</a></li>
+    <li>
+    <article>
+        <a href="{% url 'blog_post' blog=blog %}">{{ blog|capfirst }}</a>
+        <img src="{% static 'blogs/images/py.jpeg'%}" alt="Python" />
+        <div>
+        <h3>Python Intro</h3>
+        <p>python is high leval programing language.</p>
+        </div>
+    </article>
     {% endfor %}
 </ul>
-
+</section>
 {% endblock %}
 
 <!--<!DOCTYPE html>-->

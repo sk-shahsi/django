@@ -9,7 +9,14 @@
     {% block css_files %}{% endblock %}
 </head>
 <body>
-
+<header>
+    <nav>
+        <h1>
+        <a href="{% url 'home' %}">Home Page</a>
+            </h1>
+        <nav><a href="">All Posts</a></nav>
+    </nav>
+</header>
 {% block body_content %}{% endblock %}
 
 
