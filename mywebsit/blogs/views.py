@@ -9,8 +9,8 @@ blog_name = {
     "python-basic": "Python Basic Intro",
     "django-basic": "Django basic post",
     "python-oops": "Python oops post",
-    "regex": "Regular expiration in python"
-
+    "regex": "Regular expiration in python",
+    "tkinier":None
 }
 # def home_page(request):
 #     return render(request, "blogs/index.html")
@@ -21,6 +21,8 @@ def home_page(request):
     return render(request, "blogs/index.html")
     res_data = render_to_string("blogs/index.html")
     # return HttpResponse(res_data)
+
+
 
 def blogpost(request):
     list_items =""
@@ -43,15 +45,24 @@ def blogpost(request):
 def python_intro(request):
     return HttpResponse("<h1>Python Introduction !!<h1>")
 
+
+
 def django_basic_intro(request):
     return HttpResponse("<h1>Django Basic Introduction !!<h1>")
 
+
+
 def python_oops(request):
     return HttpResponse("<h1>Python Oops Introduction !!<h1>")
+
+
+
 def process_blog_name(blog):
     blog_list = blog.split("-")
     return " ".join(blog_list)
     #return " ".join(blog_list).title()
+
+
 
 def blog_post(request,blog):
     try:

@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{blog_name|title}}</title>
+{% extends "base.html"%}
+{% block page_title %}
+    {{blog_name|title}}
+{% endblock %}
 
-</head>
-<body>
-
+{% block body_content %}
 <h1>{{blog_name|title}} blog post</h1>
-<h2>{{ blog_text }}</h2>
-</body>
-</html>
+{% if blog_text %}
+    <h2>{{ blog_text }}</h2>
+{% else %}
+    <h2>Blog is in progress........</h2>
+{% endif %}
+{% endblock %}
