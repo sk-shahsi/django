@@ -18,7 +18,12 @@ from django.contrib import admin
 from django.urls import path
 
 from helloworld.views import HelloWorld
+from rest_framework import routers
+from helloworld.views import postView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', HelloWorld.as_view()),
 ]
+router = routers.SimpleRouter()
+router.register('post', postView)
+urlpatterns += router.urls
