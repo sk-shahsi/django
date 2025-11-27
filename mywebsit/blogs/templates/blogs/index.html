@@ -50,7 +50,21 @@
         </li>
     </ul>
 </section>
+<section>
+    <ul>
+{% for blog in l_blog %}
+    <li>
+    <article>
+        <a href="{% url 'blog_post' blog=blog.slug%}">{{ blog.title }}</a>
+        <img src="{% static 'blogs/images/'|add:blog.image %}" alt="{{ blog.title }}" />
+        <div>
+        <p>{{ blog.preview }}</p>
 
+        </div>
+    </article>
+    {% endfor %}
+</ul>
+</section>
 <section>
     <h2>About the Auther</h2>
     <p>The Auther has 5+ years of Experience in software and application development

@@ -18,11 +18,11 @@ All Post
 {% for blog in blog_list %}
     <li>
     <article>
-        <a href="{% url 'blog_post' blog=blog %}">{{ blog|capfirst }}</a>
-        <img src="{% static 'blogs/images/py.jpeg'%}" alt="Python" />
+        <a href="{% url 'blog_post' blog=blog.slug%}">{{ blog.title }}</a>
+        <img src="{% static 'blogs/images/'|add:blog.image %}" alt="{{ blog.title }}" />
         <div>
-        <h3>Python Intro</h3>
-        <p>python is high leval programing language.</p>
+        <p>{{ blog.preview }}</p>
+
         </div>
     </article>
     {% endfor %}
